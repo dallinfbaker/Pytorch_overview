@@ -22,7 +22,9 @@ def train(model: BasicNeuralNetwork):
         
         out = model(x)
         loss = loss_fn(out.squeeze(), y)
-        print(loss.item())
+        
+        if (epoch % 1000 == 0):
+            print(f"the loss is currently: {loss.item()}")
         
         loss.backward()
         optim.step()
