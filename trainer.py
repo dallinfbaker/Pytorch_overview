@@ -22,6 +22,7 @@ def train(model: BasicNeuralNetwork):
         
         out = model(x)
         loss = loss_fn(out.squeeze(), y)
+        print(loss.item())
         
         loss.backward()
         optim.step()
